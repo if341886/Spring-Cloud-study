@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-geteway" />
+        <module name="springcloud-message" />
+        <module name="springcloud-eureka" />
+        <module name="springcloud-config" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloud-config" target="1.8" />
+      <module name="springcloud-eureka" target="1.8" />
+      <module name="springcloud-geteway" target="1.8" />
+      <module name="springcloud-message" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloud-config" options="-parameters" />
+      <module name="springcloud-eureka" options="-parameters" />
+      <module name="springcloud-geteway" options="-parameters" />
+      <module name="springcloud-message" options="-parameters" />
+    </option>
+  </component>
+</project>
