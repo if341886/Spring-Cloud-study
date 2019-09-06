@@ -14,6 +14,7 @@ public class Comtroller {
 
     @RequestMapping("/dome")
     public String getMessage(){
+        System.out.println("哈哈哈");
         return messageService.getMessage();
     }
 }
