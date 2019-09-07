@@ -1,0 +1,10 @@
+#配置文件客户端
+spring:
+  application:
+    name: study-config-client
+  cloud:
+    config:
+      name: study-config-client  #文件名前缀
+      profile: dev  #环境
+      label: master
+      uri: http://192.168.31.213:7300  #配置中心地址

@@ -8,15 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.SimpleDateFormat;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/geteway")
 public class Comtroller {
 
     @Autowired
     MessageService messageService;
 
-    @RequestMapping("/dome")
+    @RequestMapping("/getName")
     public String getMessage(){
-        System.out.println("s");
         return messageService.getMessage();
     }
 

@@ -1,12 +1,12 @@
 server:
-    port: 7200
-    tomcat:
-      uri-encoding: UTF-8
+  port: 7200
+  tomcat:
+    uri-encoding: UTF-8
 
 spring:
   application:
     name: study-message
-      #用户配置开发(dev)，测试(test)，生产(prod)的配置文件，避免频繁改动
+    #用户配置开发(dev)，测试(test)，生产(prod)的配置文件，避免频繁改动
   profiles:
     active: dev
 
