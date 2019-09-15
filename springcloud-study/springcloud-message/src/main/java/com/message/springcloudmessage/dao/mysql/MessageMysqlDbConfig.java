@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,11 +29,27 @@ public class MessageMysqlDbConfig {
 
     static final String MYSQl_MAPPER = "classpath:mysql/*.xml";
 
+    @Value("${spring.datasource.mysql.jdbcUrl}")
+    private String jdbcUrl;
+
+    @Value("${spring.datasource.mysql.username}")
+    private String username;
+
+    @Value("${spring.datasource.mysql.password}")
+    private String password;
+
+    @Value("${spring.datasource.mysql.driverClassName}")
+    private String driverClassName;
+
     @Primary
     @Bean("getMysqlDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.mysql")
+//    @ConfigurationProperties(prefix = "spring.datasource.mysql")
     public DataSource getMysqlDataSource(){
         HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl(jdbcUrl);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+        dataSource.setDriverClassName(driverClassName);
         return dataSource;
     }
 

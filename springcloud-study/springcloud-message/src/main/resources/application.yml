@@ -9,20 +9,19 @@ spring:
     #用户配置开发(dev)，测试(test)，生产(prod)的配置文件，避免频繁改动
   profiles:
     active: dev
-  jpa:
-    show-sql: true
-  datasource:
-    mysql:
-      jdbcUrl: jdbc:mysql://localhost:3306/study?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-      username: root
-      password: 123456
-      driverClassName: com.mysql.cj.jdbc.Driver
 
-    oracle:
-      jdbcUrl: jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 127.0.0.1)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl)))
-      username: study
-      password: 123456
-      driverClassName: oracle.jdbc.driver.OracleDriver
+#  datasource:
+#    mysql:
+#      jdbcUrl: jdbc:mysql://localhost:3306/study?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#      username: root
+#      password: 123456
+#      driverClassName: com.mysql.cj.jdbc.Driver
+#
+#    oracle:
+#      jdbcUrl: jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 127.0.0.1)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl)))
+#      username: study
+#      password: 123456
+#      driverClassName: oracle.jdbc.driver.OracleDriver
 
 eureka:
   client:

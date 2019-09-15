@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,10 +28,26 @@ public class MessageOracleDbConfig {
 
     static final String ORACLE_MAPPER = "classpath:oracle/*.xml";
 
+    @Value("${spring.datasource.oracle.jdbcUrl}")
+    private String jdbcUrl;
+
+    @Value("${spring.datasource.oracle.username}")
+    private String username;
+
+    @Value("${spring.datasource.oracle.password}")
+    private String password;
+
+    @Value("${spring.datasource.oracle.driverClassName}")
+    private String driverClassName;
+
     @Bean(value = "getOracleDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.oracle")
+//    @ConfigurationProperties(prefix = "spring.datasource.oracle")
     public DataSource getOracleDataSource(){
         HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl(jdbcUrl);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+        dataSource.setDriverClassName(driverClassName);
         return dataSource;
     }
 

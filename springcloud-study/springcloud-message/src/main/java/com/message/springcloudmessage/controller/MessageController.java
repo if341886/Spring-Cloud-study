@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/atudy")
 public class MessageController {
 
-    @Value("${name}")
+    @Value("${projectName}")
    private String name;
 
     @PostMapping("/getMessage")
