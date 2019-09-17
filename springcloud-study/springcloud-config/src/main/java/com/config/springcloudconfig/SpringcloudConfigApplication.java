@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 配置中心
+ * //把服务注册到eureka  @EnableEurekaClient  @EnableDiscoveryClient
  */
 @SpringBootApplication
-@EnableDiscoveryClient //把服务注册到eureka  @EnableEurekaClient  @EnableDiscoveryClient
+@EnableDiscoveryClient
 @EnableConfigServer
 public class SpringcloudConfigApplication {
     public static void main(String[] args) {
